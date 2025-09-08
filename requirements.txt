@@ -8,3 +8,4 @@ pint
 django-htmx
 pillow
 python-dotenv 
+whitenoise
