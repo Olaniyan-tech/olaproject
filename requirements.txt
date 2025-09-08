@@ -6,4 +6,5 @@ gunicorn
 psycopg2-binary
 pint
 django-htmx
-pillow 
+pillow
+python-dotenv 
