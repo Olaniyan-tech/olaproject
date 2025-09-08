@@ -27,10 +27,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 DEBUG = str(os.environ.get('DEBUG')) == "1"
 #print("DEBUG (from env):", DEBUG)
 
-ALLOWED_HOSTS = []
-
-if not DEBUG:
-    ALLOWED_HOSTS += [os.environ.get('DJANGO_ALLOWED_HOST')]
+ALLOWED_HOSTS = [os.environ.get('DJANGO_ALLOWED_HOST', '127.0.0.1')]
 
 # Application definition
 #python manage.py makemigrations
