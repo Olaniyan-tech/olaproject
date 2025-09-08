@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ola-Tech</title>
+    <link rel="stylesheet" href="{% static 'recipes/recipes-htmx.css' %}"/>
+</head>
+
+<body>
+    <h1>Hello</h1>
+    {% static 'recipes/recipes-htmx.css' %}
+    {% include "search/search-form.html" %}
+
+    {% block content %}
+
+    {% endblock %}
+
+    <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.6/dist/htmx.min.js"></script>
+    
+    <script>
+        document.body.addEventListener("htmx:configRequest", (event)=>{
+            event.detail.headers['X-CSRFToken'] = '{{ csrf_token }}'
+        })
+    </script>
+</body>
+</html>

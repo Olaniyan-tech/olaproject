@@ -1,0 +1,19 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+<h1>{{ strings|safe }}</h1>
+<h1>My Recipes</h1>
+
+
+<a href="{% url 'recipes:create' %}">Add Recipe</a>
+
+<ul>
+    {% for obj in object_list %}
+            <li><a href="{{ obj.get_absolute_url }}">{{ obj.name}}</a></li>
+    {% endfor %}
+</ul>
+
+
+{% endblock %}
+

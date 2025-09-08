@@ -1,0 +1,22 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+{% if not created %}
+
+<div style="margin-top: 30px;">
+    <form action="/blog/create_blog/" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+    <button style="margin-top: 12px;" type="submit">Create Blog</button>
+    </form>
+</div>
+
+{% else %}
+<p>New blog has been created</p>
+<a href="/blog/{{ blog_obj.id }}/">{{ blog_obj.title}} - 
+    {{ blog_obj.content }}</a>
+
+{% endif %}
+
+{% endblock %}

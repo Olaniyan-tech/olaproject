@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+
+# Django
+*.sqlite3
+/staticfiles/
+/media/
+.env
+db.sqlite3
+
+# Django migrations (optional, you may want to keep initial migrations)
+*/migrations/*.pyc
+*/migrations/*.pyo
+*/migrations/__pycache__/
+
+# Virtual environments
+env/
+venv/
+
+# IDEs
+.vscode/
+.idea/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Others
+*.egg-info/
+*.egg

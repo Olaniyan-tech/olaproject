@@ -1,0 +1,23 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+
+<h1>{{ strings|safe }}</h1>
+<h1>{{ title }} - (id : {{id}})</h1>
+<h1>{{ content }}</h1>
+
+<a href="{% url 'blog:create' %}">Create Blog</a>
+<a href="{% url 'blog:details' slug='bro-just-cool' %}">Cool Blog</a>
+<ul>
+    {% for obj in obj_list %}
+        {% if obj.title %}
+            <li><a href="{{ obj.get_absolute_url }}">{{ obj.title}} - {{ obj.content }}</a></li>
+        {% endif %}
+    {% endfor %}
+</ul>
+
+
+{% endblock %}
+
+

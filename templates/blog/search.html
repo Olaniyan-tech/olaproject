@@ -1,0 +1,14 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+<ol>
+{% for blog in blog_list %}
+    {% if blog.title %}
+        <li>
+            <a href="{{ blog.get_absolute_url }}">{{ blog.title }}</a>
+        </li>
+    {% endif %}
+{% endfor %}
+</ol>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+<div style="margin-top: 30px;">
+    <form action="." method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+    <button style="margin-top: 12px;" type="submit">Upload Image</button>
+    </form>
+</div>
+
+{% endblock %}

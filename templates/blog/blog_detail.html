@@ -1,0 +1,11 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+
+
+<h1>{{ blog_obj.title }}</h1>
+<p>{{ blog_obj.content }}</p>
+<p>User : {{ blog_obj.user.username }}</p>
+
+{% endblock %}
