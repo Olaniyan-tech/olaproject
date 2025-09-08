@@ -32,7 +32,6 @@ ALLOWED_HOSTS = []
 if not DEBUG:
     ALLOWED_HOSTS += [os.environ.get('DJANGO_ALLOWED_HOST')]
 
-
 # Application definition
 #python manage.py makemigrations
 #python manage.py migrate
