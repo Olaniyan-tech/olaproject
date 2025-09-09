@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = str(os.environ.get('DEBUG')) == "1"
 
-ALLOWED_HOSTS = [os.environ.get('DJANGO_ALLOWED_HOST', '127.0.0.1'), 'localhost']
+ALLOWED_HOSTS = ['olaproject.onrender.com', '127.0.0.1', 'localhost']
 print("ALLOWED_HOSTS: ", ALLOWED_HOSTS)
 
 # Application definition
