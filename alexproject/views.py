@@ -16,17 +16,22 @@ def home(request, *args, **kwargs):
     """
     print(args, kwargs)
 
-    random_id = random.randint(1, 3)
-    blog_obj = Blog.objects.get(id = random_id)
-    blog_title = blog_obj.title
-    blog_content = blog_obj.content
-
     obj_list = Blog.objects.all()
+
+    blog_obj = None
+    blog_title = ""
+    blog_content = ""
+
+    if obj_list.exists():
+        blog_obj = random.choice(obj_list)
+        blog_title = blog_obj.title
+        blog_content = blog_obj.content
+
     
     context = {"obj_list" : obj_list,
                "title" : blog_title,
                "content" : blog_content,
-               "id" : blog_obj.id,
+               "id" : blog_obj.id if blog_obj else None
                }
 
 
