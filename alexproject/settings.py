@@ -21,13 +21,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
+
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'ep+my09!c%nv^(u3u4ar1818==&v22j#kkk2!)d#=8x$a3a=2o')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = str(os.environ.get('DEBUG')) == "1"
 
-ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOST', '127.0.0.1,localhost').split(",")
-print("ALLOWED_HOSTS: ", ALLOWED_HOSTS)
+ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOST', '127.0.0.1,localhost').split(",") + ['127.0.0.1', 'localhost']
+#print("ALLOWED_HOSTS: ", ALLOWED_HOSTS)
 
 # Application definition
 #python manage.py makemigrations

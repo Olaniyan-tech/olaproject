@@ -3,11 +3,14 @@
 {% block content %}
 
 <div style="margin-top: 30px;">
-    <form action="." method="POST" enctype="multipart/form-data">
+    <form action="." method="POST" enctype="multipart/form-data"
+    hx-post="{{ request.path }}" 
+    hx-encoding="multipart/form-data"
+    >
         {% csrf_token %}
         {{ form.as_p }}
     <button style="margin-top: 12px;" type="submit">Upload Image</button>
     </form>
 </div>
 
-{% endblock %}
+{% endblock %} 

@@ -1,0 +1,25 @@
+<style>
+    progress::-webkit-progress-value { background-color: #007bff; }
+    progress::-moz-progress-bar { background-color: #007bff; }
+</style>
+
+<div style="margin-top: 30px;">
+    <form id="image-upload-form" action="." method="POST" enctype="multipart/form-data"
+    hx-post="{{ request.path }}" 
+    hx-encoding="multipart/form-data"
+>
+
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div>
+            <progress id="image-upload-progress" value="0" max="100"></progress>
+        </div>
+    <button style="margin-top: 12px;" type="submit">Upload Image</button>
+    </form>
+</div>
+
+<script>
+    htmx.on('#image-upload-form', 'htmx:xhr:progress', function(evt) {
+        htmx.find('#image-upload-progress').setAttribute('value', Math.floor(evt.detail.loaded/evt.detail.total * 100))
+    });
+</script>
